@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/reto-deezer/static/css/main.e7bfa0c0.chunk.css",
-    "main.js": "/reto-deezer/static/js/main.46aecb81.chunk.js",
-    "main.js.map": "/reto-deezer/static/js/main.46aecb81.chunk.js.map",
+    "main.js": "/reto-deezer/static/js/main.d21316f2.chunk.js",
+    "main.js.map": "/reto-deezer/static/js/main.d21316f2.chunk.js.map",
     "runtime-main.js": "/reto-deezer/static/js/runtime-main.d7d18a3d.js",
     "runtime-main.js.map": "/reto-deezer/static/js/runtime-main.d7d18a3d.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/reto-deezer/static/css/2.4c97ca4f.chunk.css",
@@ -27,6 +27,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.e35fb7bc.chunk.js",
     "static/css/main.e7bfa0c0.chunk.css",
-    "static/js/main.46aecb81.chunk.js"
+    "static/js/main.d21316f2.chunk.js"
   ]
 }
