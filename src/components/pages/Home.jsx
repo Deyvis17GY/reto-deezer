@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,Suspense,lazy} from 'react'
 import BarraNavegacion from '../templates/barraNavegacion'
+import Cargando from '../templates/Cargando'
+const Catalogo = lazy(()=> import('../templates/Catalogo'))
 
-import Catalogo from '../templates/Catalogo'
 const Home = () =>{
     return(
           <Fragment>
@@ -10,7 +11,9 @@ const Home = () =>{
                  <BarraNavegacion/>
                </div>
                 <div className="catalogo">
-                  <Catalogo/>
+                  <Suspense fallback={<Cargando/>}>
+                  <Catalogo />
+                  </Suspense>
                 </div>
                 
               </div>

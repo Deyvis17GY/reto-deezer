@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import LazyLoad from 'react-lazyload'
 import imgCaricatura from '../../img/caricatura.png'
 import buscar from '../../icons/buscar.svg'
 import usuario from '../../icons/usuario.svg'
@@ -10,14 +11,15 @@ const Catalogo = () =>{
     const [nombre,setNombre] = useState('')
     const [cancion,setCancion] = useState([])
     const [artista,setArtista] = useState([])
-    const [imgBanner,setImgBanner]=useState('')
-    const [imgMiniatura,setImgMiniatura]= useState('')
+    const [imgBanner,setImgBanner]=useState(null)
+    const [imgMiniatura,setImgMiniatura]= useState(null)
     const [nomMusica,setNomMusica]=useState('')
     const [nomArtista,setNomArtista]=useState('')
     const inicioImg = document.querySelector('.inicioImg')
     let contador = 1
     let valor = false
 
+    
     const reproducir = ()=>{
         if(contador==1){
             contador =0
@@ -33,7 +35,7 @@ const Catalogo = () =>{
     }
 
     const getCancion = async (nom)=>{
-        const response = await fetchJsonp('https://api.deezer.com/search/track?q='+nom+'&index=0&limit=10&output=jsonp')
+        const response = await fetchJsonp('https://api.deezer.com/search/track?q='+nom+'&index=0&limit=40&output=jsonp')
         const respuesta = await response.json()
         const datos = respuesta.data
         setArtista(datos)   
@@ -59,20 +61,22 @@ const Catalogo = () =>{
     }
 
     const obtener = async ()=>{
-        const data = await fetchJsonp('https://api.deezer.com/search/track?q=bichota&index=0&limit=10&output=jsonp')
+        const data = await fetchJsonp('https://api.deezer.com/search/track?q=bichota&index=0&limit=40&output=jsonp')
         const response = await data.json()
         const personas = response.data
-
+        
+        setImgBanner(imgCaricatura)
+        setImgMiniatura(imgCaricatura)
+        
         setArtista(personas)
         personas.map(item=>{
             setCancion(item.preview)
-            setImgBanner(imgCaricatura)
             setNomMusica('Bichota')
             setNomArtista('Bichota')
-            setImgMiniatura(imgCaricatura)
         })
         
     }
+    
 
     useEffect(()=>{
       obtener()
@@ -104,18 +108,17 @@ const Catalogo = () =>{
               <div className="resultado">
                    <h1>Resultados</h1>
                    <div className="musica">
+                     
                          {
                             artista.map( (item)=>(
 
                                 <div key={item.id}  className="inf-musica">
                                     <div className="playImage">
+                                    <LazyLoad width={"100%"} debounce={false} offset={200}>
                                         <img src={item.album.cover_big} alt=""/>
-                                    {
-                                        valor = true ? 
+                                       
                                         <img className="playImg"  src={playImg} alt="" onClick={(e)=>ObtenerDatosId(item)} />
-                                        : 
-                                        <img className="playImg"  src={pausaImg} alt="" onClick={(e)=>ObtenerDatosId(item)} />
-                                     }
+                                        </LazyLoad>
                                     </div>
                                     <h3  className="titulo">{item.title}</h3>
                                     <p className="subtitulo">{item.artist.name}</p>
