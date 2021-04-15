@@ -59,7 +59,7 @@ const Catalogo = () =>{
     }
 
     const reproducir = ()=>{
-        if(contador==1){
+        if(contador===1){
             contador =0
             inicioImg.play()
             

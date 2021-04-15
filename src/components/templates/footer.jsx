@@ -1,38 +1,27 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment } from 'react'
 import play from '../../icons/play.svg'
 import atras from '../../icons/atras.svg'
 import adelante from '../../icons/adelante.svg'
 import parlante from '../../icons/parlante.svg'
-import pausaImg from '../../img/pausa.png'
+
 const Footer = ({musica,caricatura,nombreCancion,nomArtista,inicioImg}) =>{
 
-    const [ctrlImg,setCtrlImg]= useState(null)
     const inicio = document.querySelector('.inicio')
     const volumen = document.getElementById('parlante')
     let contador = 0
     const reproducir = ()=>{
-        if(contador==0){
+        if(contador===0){
             contador =1
             inicio.play()
         }else{
             contador =0
             inicio.pause()
         }   
-        console.log(contador)
     }
 
     const subirVolumen=()=>{
         inicio.volume = volumen.value /100
     }
- 
-    
-
-    useEffect(()=>{
-      
-            
-    },[])
-    
-
 
     return(
           <Fragment>
