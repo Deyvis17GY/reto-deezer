@@ -40,3 +40,48 @@
         }
     }
 }
+
+@media (max-width:500px){
+    .resultado{
+        width: 94%;
+        margin:10px auto 10% auto;
+        h1{
+            font-family: Quicksand;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 27px;
+            color: #E86060;
+        }
+        .musica{
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(2,1fr);
+            .inf-musica{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                img{
+                    width: 160px;
+                    height: 160px;
+                }
+                h3{
+                    font-family: Quicksand;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #555555;
+                }
+                p{
+                    font-family: Quicksand;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 15px;
+                    color: #828282;
+                }
+            }
+        }
+    }
+}
