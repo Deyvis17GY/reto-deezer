@@ -69,6 +69,7 @@
       height: 80px; }
     .footer .artista .informe {
       height: 80px;
+      width: 100%;
       padding: 10px 20px;
       display: grid;
       grid-template-columns: repeat(1, fr); }
@@ -116,12 +117,27 @@
       margin-top: -8px; }
 
 @media (max-width: 500px) {
+  .footer .artista {
+    width: 80%;
+    max-width: 80%; }
+    .footer .artista .informe {
+      padding: 5px 10px; }
+      .footer .artista .informe .cancion {
+        font-size: 14px;
+        line-height: 15px;
+        color: #FFFFFF;
+        margin: 1px 0 5px 0; }
+      .footer .artista .informe .album {
+        font-size: 13px;
+        line-height: 15px; }
   .footer .controles {
-    width: 50%; }
+    width: 50%;
+    max-width: 50%; }
     .footer .controles img {
-      width: 20%;
+      width: 25%;
+      max-width: 25%;
       padding: 0;
-      margin: 0; }
+      margin: 5px; }
       .footer .controles img:active {
         transform: scale(1.2); }
   .footer .audio {
@@ -132,7 +148,7 @@
   width: 100%; }
   .catalogo .busqueda {
     width: 94%;
-    margin: 20px;
+    margin: 10px auto;
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -189,10 +205,10 @@
 .banner {
   width: 94%;
   height: 200px;
-  margin: 20px;
+  margin: auto;
   display: flex; }
   .banner .disco {
-    width: 20%; }
+    width: 30%; }
     .banner .disco img {
       width: 100%;
       height: 100%; }
@@ -224,7 +240,8 @@
     width: 95%;
     margin: auto; }
     .banner .disco {
-      width: 70%; } }
+      width: 80%;
+      max-width: 80%; } }
 .resultado {
   width: 94%;
   margin: 10px auto 10% auto; }
@@ -237,15 +254,25 @@
     color: #E86060; }
   .resultado .musica {
     display: grid;
-    gap: 10px;
+    gap: 20px;
     grid-template-columns: repeat(5, 1fr); }
     .resultado .musica .inf-musica {
       display: flex;
       flex-direction: column;
       width: 100%; }
-      .resultado .musica .inf-musica img {
-        width: 160px;
-        height: 160px; }
+      .resultado .musica .inf-musica .playImage {
+        position: relative; }
+        .resultado .musica .inf-musica .playImage img {
+          width: 100%;
+          height: 180px; }
+        .resultado .musica .inf-musica .playImage .playImg {
+          position: absolute;
+          left: 0;
+          width: 160px;
+          padding: 0 65px;
+          opacity: 0.7; }
+          .resultado .musica .inf-musica .playImage .playImg:active {
+            transform: scale(1.1); }
       .resultado .musica .inf-musica h3 {
         font-family: Quicksand;
         font-style: normal;
@@ -264,38 +291,8 @@
 @media (max-width: 500px) {
   .resultado {
     width: 94%;
-    margin: 10px auto 10% auto; }
-    .resultado h1 {
-      font-family: Quicksand;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 22px;
-      line-height: 27px;
-      color: #E86060; }
+    margin: 10px auto 20% auto; }
     .resultado .musica {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(2, 1fr); }
-      .resultado .musica .inf-musica {
-        display: flex;
-        flex-direction: column;
-        width: 100%; }
-        .resultado .musica .inf-musica img {
-          width: 160px;
-          height: 160px; }
-        .resultado .musica .inf-musica h3 {
-          font-family: Quicksand;
-          font-style: normal;
-          font-weight: bold;
-          font-size: 14px;
-          line-height: 17px;
-          color: #555555; }
-        .resultado .musica .inf-musica p {
-          font-family: Quicksand;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 12px;
-          line-height: 15px;
-          color: #828282; } }
+      grid-template-columns: repeat(2, 1fr); } }
 
 /*# sourceMappingURL=style.css.map */
