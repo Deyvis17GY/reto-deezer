@@ -7,13 +7,13 @@ const Home = () =>{
     return(
           <Fragment>
               <div className="contenedor">
-               <div className="navegacion">
-                 <BarraNavegacion/>
-               </div>
+                <div className="navegacion">
+                  <BarraNavegacion/>
+                </div>
                 <div className="catalogo">
-                  <Suspense fallback={<Cargando/>}>
-                  <Catalogo />
-                  </Suspense>
+                    <Suspense fallback={<Cargando/>}>
+                    <Catalogo />
+                    </Suspense>
                 </div>
                 
               </div>

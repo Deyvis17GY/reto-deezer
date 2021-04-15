@@ -45,8 +45,11 @@
           font-size: 14px;
           line-height: 24px;
           color: #9F7575; }
+          .contenedor .navegacion .top .libreria ul li:hover, .contenedor .navegacion .top .playlist ul li:hover {
+            cursor: pointer;
+            color: #E86060; }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .contenedor {
     width: 100vw;
     grid-template-columns: repeat(1, 1fr); }
@@ -63,6 +66,8 @@
   justify-content: space-between;
   align-items: center; }
   .footer .artista {
+    width: 20%;
+    max-width: 20%;
     align-items: center;
     display: flex; }
     .footer .artista img {
@@ -117,7 +122,7 @@
       -webkit-appearance: none;
       margin-top: -8px; }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .footer .artista {
     width: 80%;
     max-width: 80%; }
@@ -184,28 +189,36 @@
       .catalogo .busqueda .usuario p {
         margin: 0; }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .catalogo {
     width: 100%;
     grid-column: 1; }
     .catalogo .busqueda {
-      width: 90%;
-      margin: 20px 10px;
+      position: fixed;
+      height: 60px;
+      background-color: #EA5757;
+      z-index: 100;
+      width: 100%;
+      margin: auto;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       justify-items: center; }
       .catalogo .busqueda .buscar {
         width: 90%;
-        margin: auto; }
+        margin: 10px auto; }
         .catalogo .busqueda .buscar input {
           width: 100%;
           height: 40px; }
         .catalogo .busqueda .buscar img {
           bottom: 10px;
-          right: 10px; } }
+          right: 10px; }
+      .catalogo .busqueda .usuario p {
+        display: none; }
+      .catalogo .busqueda .usuario img {
+        display: none; } }
 .banner {
   width: 94%;
-  height: 200px;
+  height: 250px;
   margin: auto;
   display: flex; }
   .banner .disco {
@@ -215,11 +228,10 @@
       height: 100%; }
   .banner .descripcion {
     width: 100%;
-    background: linear-gradient(0deg, rgba(167, 0, 0, 0.7), rgba(167, 0, 0, 0.7)), url("../img/caricatura.png");
+    background: linear-gradient(0deg, rgba(224, 128, 128, 0.7), rgba(221, 75, 75, 0.7)), url("../img/caricatura.png");
     background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.5;
     padding: 20px; }
     .banner .descripcion h2 {
       font-family: Quicksand;
@@ -235,14 +247,44 @@
       font-size: 14px;
       line-height: 17px;
       color: #FFFFFF; }
+    .banner .descripcion .button {
+      position: relative;
+      top: 30%; }
+      .banner .descripcion .button .reproduce, .banner .descripcion .button .seguir {
+        margin-right: 10px;
+        width: 117px;
+        height: 31px;
+        font-size: 14px;
+        mix-blend-mode: normal;
+        border-radius: 100px;
+        text-align: center; }
+        .banner .descripcion .button .reproduce:active, .banner .descripcion .button .seguir:active {
+          transform: scale(1.1); }
+      .banner .descripcion .button .reproduce {
+        background: #E86060;
+        border: 1px solid #E86060;
+        color: #fff; }
+      .banner .descripcion .button .seguir {
+        border: 1px solid #E86060;
+        color: #E86060;
+        background-color: transparent; }
+        .banner .descripcion .button .seguir:hover {
+          background-color: #E86060;
+          color: #fff; }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .banner {
     width: 94%;
-    margin: auto; }
+    margin: 20% auto 0 auto; }
     .banner .disco {
       width: 80%;
-      max-width: 80%; } }
+      max-width: 80%; }
+    .banner .descripcion .button {
+      width: 100%;
+      top: 5%;
+      margin: auto; }
+      .banner .descripcion .button .reproduce, .banner .descripcion .button .seguir {
+        margin-bottom: 5%; } }
 .resultado {
   width: 94%;
   margin: 10px auto 10% auto; }
@@ -289,10 +331,17 @@
         line-height: 15px;
         color: #828282; }
 
-@media (max-width: 500px) {
+@media (max-width: 1100px) {
+  .resultado .musica {
+    grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 800px) {
   .resultado {
-    width: 94%;
     margin: 10px auto 20% auto; }
+    .resultado .musica {
+      grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) {
+  .resultado {
+    width: 94%; }
     .resultado .musica {
       grid-template-columns: repeat(2, 1fr); } }
 .cargando {

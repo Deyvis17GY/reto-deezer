@@ -1,6 +1,6 @@
 .banner{
     width: 94%;
-    height: 200px;
+    height: 250px;
     margin:auto;
     display: flex;
     .disco{
@@ -13,11 +13,10 @@
    
     .descripcion{
         width: 100%;
-        background: linear-gradient(0deg, rgba(167, 0, 0, 0.7), rgba(167, 0, 0, 0.7)), url('../img/caricatura.png');
+        background: linear-gradient(0deg, rgba(224, 128, 128, 0.7), rgba(221, 75, 75, 0.7)), url('../img/caricatura.png');
         background-position:center right;
         background-repeat: no-repeat;
         background-size: cover;
-        opacity: 0.5;
         padding: 20px;
         h2{
             font-family: Quicksand;
@@ -35,16 +34,57 @@
             line-height: 17px;
             color: #FFFFFF
         }
+        .button{
+            position: relative;
+            top: 30%;
+            .reproduce,.seguir{
+                margin-right: 10px;
+                width: 117px;
+                height: 31px;
+                font-size: 14px;
+                mix-blend-mode: normal;
+                border-radius: 100px;
+                text-align: center;
+                &:active{
+                    transform: scale(1.1);
+                }
+            }
+            .reproduce{
+                background: #E86060;
+                border: 1px solid #E86060;
+                color: #fff;
+            }
+            .seguir{
+                border: 1px solid #E86060;
+                color: #E86060;
+                background-color: transparent;
+                &:hover{
+                    background-color: #E86060;
+                    color: #fff;
+                }
+            }
+        }
     }
 }
 
-@media (max-width:500px){
+@media (max-width:600px){
     .banner{
         width: 94%;
-        margin: auto;
+        margin: 20% auto 0 auto;
         .disco{
             width: 80%;
             max-width: 80%;
         }
+        .descripcion{
+            .button{
+                width: 100%;
+                top: 5%;
+                margin: auto;
+                .reproduce,.seguir{
+                    margin-bottom: 5%;
+                }
+            }
+        }
+        
     }
 }

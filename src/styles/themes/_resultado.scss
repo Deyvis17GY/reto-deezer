@@ -55,13 +55,30 @@
     }
 }
 
-@media (max-width:500px){
+@media (max-width:1100px){
     .resultado{
-        width: 94%;
+        .musica{
+            grid-template-columns: repeat(4,1fr);
+            
+        }
+    }
+}
+@media (max-width:800px){
+    .resultado{
         margin:10px auto 20% auto;
         .musica{
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(3,1fr);
             
+        }
+    }
+}
+
+@media (max-width:600px){
+    .resultado{
+        width: 94%;
+        .musica{
+            grid-template-columns: repeat(2,1fr);
+ 
         }
     }
 }
