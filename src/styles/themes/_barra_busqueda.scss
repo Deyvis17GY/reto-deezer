@@ -1,0 +1,51 @@
+.catalogo{
+    grid: 2/span 3;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .busqueda{
+        // position: fixed;
+        width: 94%;
+        margin:20px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .buscar{
+            width: 50%;
+            position: relative;
+            input{
+                width: 100%;
+                background: #FFFFFF;
+                border: 1px solid #828282;
+                box-sizing: border-box;
+                border-radius: 100px;
+                padding: 0 10px;
+                outline: none;
+                &::placeholder{
+                font-family: Quicksand;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 22px;
+                color: #BDBDBD;
+                }
+            }
+            img{
+                position: absolute;
+                bottom: 4px;
+                right: 10px;
+            }
+        }
+        .usuario{
+            display: flex;
+            align-items: center;
+            img{
+               margin: auto 10px;
+            }
+            p{
+                margin: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.contenedor {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%; }
+  .contenedor .navegacion {
+    width: 100%;
+    height: 100vh; }
+    .contenedor .navegacion .top {
+      position: fixed;
+      height: 100%;
+      width: 20%;
+      background: #662323;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+      .contenedor .navegacion .top .logo {
+        width: 80%;
+        margin: 0 auto;
+        padding: 10% 0; }
+        .contenedor .navegacion .top .logo img {
+          width: 100%;
+          height: 100%; }
+      .contenedor .navegacion .top .libreria, .contenedor .navegacion .top .playlist {
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); }
+        .contenedor .navegacion .top .libreria h1, .contenedor .navegacion .top .playlist h1 {
+          font-family: Quicksand;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 22px;
+          line-height: 20px;
+          color: #FFFFFF; }
+        .contenedor .navegacion .top .libreria ul li, .contenedor .navegacion .top .playlist ul li {
+          text-decoration: none;
+          list-style: none;
+          font-family: Quicksand;
+          font-style: normal;
+          font-weight: 100;
+          font-size: 14px;
+          line-height: 24px;
+          color: #9F7575; }
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  background: #EB5757;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .footer .artista {
+    align-items: center;
+    display: flex; }
+    .footer .artista img {
+      width: 80px;
+      height: 80px; }
+    .footer .artista .informe {
+      height: 80px;
+      padding: 10px 20px;
+      display: grid;
+      grid-template-columns: repeat(1, fr); }
+      .footer .artista .informe .cancion {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF; }
+      .footer .artista .informe .album {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+        color: #FFFFFF; }
+  .footer .controles img {
+    margin: 0 10px; }
+    .footer .controles img:active {
+      transform: scale(1.2); }
+  .footer .audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px; }
+    .footer .audio input[type=range] {
+      -webkit-appearance: none;
+      margin-right: 20px;
+      width: 100%; }
+    .footer .audio input[type=range]:focus {
+      outline: none; }
+    .footer .audio input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 6px;
+      cursor: pointer;
+      background: #ffffff; }
+    .footer .audio input[type=range]::-webkit-slider-thumb {
+      height: 20px;
+      width: 20px;
+      border-radius: 20px;
+      background: #ffffff;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -8px; }
+
+.catalogo {
+  grid: 2/span 3;
+  display: flex;
+  flex-direction: column;
+  width: 100%; }
+  .catalogo .busqueda {
+    width: 94%;
+    margin: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .catalogo .busqueda .buscar {
+      width: 50%;
+      position: relative; }
+      .catalogo .busqueda .buscar input {
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #828282;
+        box-sizing: border-box;
+        border-radius: 100px;
+        padding: 0 10px;
+        outline: none; }
+        .catalogo .busqueda .buscar input::placeholder {
+          font-family: Quicksand;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 22px;
+          color: #BDBDBD; }
+      .catalogo .busqueda .buscar img {
+        position: absolute;
+        bottom: 4px;
+        right: 10px; }
+    .catalogo .busqueda .usuario {
+      display: flex;
+      align-items: center; }
+      .catalogo .busqueda .usuario img {
+        margin: auto 10px; }
+      .catalogo .busqueda .usuario p {
+        margin: 0; }
+
+.banner {
+  width: 94%;
+  height: 200px;
+  margin: 20px;
+  display: flex; }
+  .banner .disco {
+    width: 20%; }
+    .banner .disco img {
+      width: 100%;
+      height: 100%; }
+  .banner .descripcion {
+    width: 100%;
+    background: linear-gradient(0deg, rgba(167, 0, 0, 0.7), rgba(167, 0, 0, 0.7)), url("../img/caricatura.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    padding: 20px; }
+    .banner .descripcion h2 {
+      font-family: Quicksand;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 27px;
+      color: #FFFFFF; }
+    .banner .descripcion p {
+      font-family: Quicksand;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: #FFFFFF; }
+
+.resultado {
+  width: 94%;
+  margin: 10px auto 10% auto; }
+  .resultado h1 {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    color: #E86060; }
+  .resultado .musica {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr); }
+    .resultado .musica .inf-musica {
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+      .resultado .musica .inf-musica img {
+        width: 160px;
+        height: 160px; }
+      .resultado .musica .inf-musica h3 {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        color: #555555; }
+      .resultado .musica .inf-musica p {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 15px;
+        color: #828282; }
+
+/*# sourceMappingURL=style.css.map */
