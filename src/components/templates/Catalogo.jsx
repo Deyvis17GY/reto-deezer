@@ -15,7 +15,7 @@ const Catalogo = () =>{
 
 
     const getCancion = async (nom)=>{
-        const response = await axios.get('https://api.deezer.com/search/track?q='+nom+'&index=0&limit=10&output=json')
+        const response = await axios.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q='+nom+'&index=0&limit=10&output=json')
         const datos = await response.data.data
         
         setArtista(datos)
@@ -48,8 +48,10 @@ const Catalogo = () =>{
 
     }
     const obtener = async ()=>{
-        const data = await axios.get('https://api.deezer.com/search/track?q=bichota&index=0&limit=10&output=json')
-        const personas = await data.data.data
+        const data = await fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=bichota&index=0&limit=10&output=json')
+        const response = await data.json()
+        const personas = response.data
+        console.log(personas)
 
         setArtista(personas)
         personas.map(item=>{
