@@ -7,6 +7,7 @@ function App() {
     <Router>
       <Switch>
         <Route path='/' exact component={Home}/>
+        <Route path='/reto-deezer' exact component={Home}/>
       </Switch>
     </Router>
   );
