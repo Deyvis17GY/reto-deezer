@@ -37,14 +37,14 @@ const Catalogo = () =>{
 
     const buscarCancion = async()=>{
         if(nombre==='' || !nombre.trim() || nombre.length < 0){
-            getCancion('bichota')
+            getCancion('camilo')
         }else{
             getCancion(nombre)
         }
     }
 
     const obtener = async ()=>{
-        const data = await fetchJsonp('https://api.deezer.com/search/track?q=bichota&index=0&limit=40&output=jsonp')
+        const data = await fetchJsonp('https://api.deezer.com/search/track?q=camilo&index=0&limit=39&output=jsonp')
         const response = await data.json()
         const personas = response.data
         
@@ -53,8 +53,8 @@ const Catalogo = () =>{
         setArtista(personas)
         personas.map(item=>{
             setCancion(item.preview)
-            setNomMusica('Bichota')
-            setNomArtista('Bichota')
+            setNomMusica('Por Primera Vez')
+            setNomArtista('Camilo')
         })   
     }
 

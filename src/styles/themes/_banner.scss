@@ -76,12 +76,35 @@
             max-width: 80%;
         }
         .descripcion{
+            width: 100%;
+            background: linear-gradient(0deg, rgba(224, 128, 128, 0.7), rgba(221, 75, 75, 0.7)), url('../img/caricatura.png');
+            background-position:center right;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px;
+            h2{
+                font-family: Quicksand;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 18px;
+                color: #FFFFFF;
+            }
+            p{
+                font-family: Quicksand;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 15px;
+                color: #FFFFFF
+            }
             .button{
                 width: 100%;
+                max-width: 100%;
                 top: 1%;
-                margin: auto;
+                margin: 0 auto;
                 .reproduce,.seguir{
-                    margin-bottom: 5%;
+                    margin-bottom: 4%;
                 }
             }
         }

@@ -279,12 +279,34 @@
     .banner .disco {
       width: 80%;
       max-width: 80%; }
-    .banner .descripcion .button {
+    .banner .descripcion {
       width: 100%;
-      top: 1%;
-      margin: auto; }
-      .banner .descripcion .button .reproduce, .banner .descripcion .button .seguir {
-        margin-bottom: 5%; } }
+      background: linear-gradient(0deg, rgba(224, 128, 128, 0.7), rgba(221, 75, 75, 0.7)), url("../img/caricatura.png");
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 20px; }
+      .banner .descripcion h2 {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+        color: #FFFFFF; }
+      .banner .descripcion p {
+        font-family: Quicksand;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 15px;
+        color: #FFFFFF; }
+      .banner .descripcion .button {
+        width: 100%;
+        max-width: 100%;
+        top: 1%;
+        margin: 0 auto; }
+        .banner .descripcion .button .reproduce, .banner .descripcion .button .seguir {
+          margin-bottom: 4%; } }
 .resultado {
   width: 94%;
   margin: 10px auto 10% auto; }
