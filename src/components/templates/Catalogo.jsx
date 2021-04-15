@@ -3,7 +3,7 @@ import imgCaricatura from '../../img/caricatura.png'
 import buscar from '../../icons/buscar.svg'
 import usuario from '../../icons/usuario.svg'
 import Footer from '../templates/footer'
-import axios from 'axios'
+import fetchJsonp from 'fetch-jsonp'
 const Catalogo = () =>{
     const [nombre,setNombre] = useState('')
     const [cancion,setCancion] = useState([])
@@ -15,16 +15,13 @@ const Catalogo = () =>{
 
 
     const getCancion = async (nom)=>{
-        const response = await axios.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q='+nom+'&index=0&limit=10&output=json')
-        const datos = await response.data.data
-        
-        setArtista(datos)
-        
+        const response = await fetchJsonp('https://api.deezer.com/search/track?q='+nom+'&index=0&limit=10&output=jsonp')
+        const respuesta = await response.json()
+        const datos = respuesta.data
+        setArtista(datos)   
     }
 
     const ObtenerDatos = (id)=>{ 
-        console.log(id)
-        console.log(id.preview)
         setCancion(id.preview)
         setImgBanner(id.album.cover_big)
         setImgMiniatura(id.album.cover)
@@ -32,26 +29,19 @@ const Catalogo = () =>{
         setNomArtista(id.artist.name)
     }
 
-
-           
-    
-    
-
     const buscarCancion = async()=>{
         if(nombre==='' || !nombre.trim() || nombre.length < 0){
             getCancion('bichota')
         }else{
             getCancion(nombre)
-           
-               
+  
         }
-
     }
+
     const obtener = async ()=>{
-        const data = await fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=bichota&index=0&limit=10&output=json')
+        const data = await fetchJsonp('https://api.deezer.com/search/track?q=bichota&index=0&limit=10&output=jsonp')
         const response = await data.json()
         const personas = response.data
-        console.log(personas)
 
         setArtista(personas)
         personas.map(item=>{
@@ -63,8 +53,9 @@ const Catalogo = () =>{
         })
         
     }
-    useEffect( async()=>{
-      await obtener()
+
+    useEffect(()=>{
+      obtener()
       
     },[])
     return(
