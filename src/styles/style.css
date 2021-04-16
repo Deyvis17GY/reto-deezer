@@ -238,7 +238,8 @@
     width: 30%; }
     .banner .disco img {
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      border-radius: 5px; }
   .banner .descripcion {
     width: 100%;
     padding: 20px; }
@@ -336,7 +337,8 @@
     font-weight: bold;
     font-size: 22px;
     line-height: 27px;
-    color: #E86060; }
+    color: #E86060;
+    margin: 10px 0; }
   .resultado .musica {
     display: grid;
     gap: 20px;
@@ -349,6 +351,7 @@
         position: relative; }
         .resultado .musica .inf-musica .playImage img {
           width: 100%;
+          border-radius: 4px;
           height: 180px; }
         .resultado .musica .inf-musica .playImage .playImg {
           position: absolute;
