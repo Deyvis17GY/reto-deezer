@@ -239,7 +239,7 @@
     .banner .disco img {
       width: 100%;
       height: 100%;
-      border-radius: 5px; }
+      border-radius: 2px; }
   .banner .descripcion {
     width: 100%;
     padding: 20px; }
@@ -288,9 +288,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 0;
-    height: 52vh;
-    padding: 80px 0 0 0; }
+    height: 15%;
+    max-height: 15%;
+    min-height: 15%;
+    padding: 70px 0 0 0; }
     .banner .disco {
       display: flex;
       justify-content: center;
@@ -325,9 +326,20 @@
         max-width: 100%;
         display: flex;
         top: 1%;
-        margin: 0 auto; }
+        align-items: center;
+        justify-content: center; }
         .banner .descripcion .button .reproduce, .banner .descripcion .button .seguir {
-          margin-bottom: 4%; } }
+          margin-right: 0;
+          width: 120px;
+          height: 40px;
+          font-size: 14px; }
+        .banner .descripcion .button .reproduce {
+          margin-right: 10px; } }
+@media (max-width: 400px) {
+  .banner {
+    height: 13%;
+    max-height: 13%;
+    min-height: 13%; } }
 .resultado {
   width: 94%;
   margin: 10px auto 10% auto; }
