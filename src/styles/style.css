@@ -124,31 +124,33 @@
       margin-top: -8px; }
 
 @media (max-width: 600px) {
-  .footer .artista {
-    width: 80%;
-    max-width: 80%; }
-    .footer .artista .informe {
-      padding: 5px 10px; }
-      .footer .artista .informe .cancion {
-        font-size: 14px;
-        line-height: 15px;
-        color: #FFFFFF;
-        margin: 1px 0 5px 0; }
-      .footer .artista .informe .album {
-        font-size: 13px;
-        line-height: 15px; }
-  .footer .controles {
-    width: 50%;
-    max-width: 50%; }
-    .footer .controles img {
-      width: 25%;
-      max-width: 25%;
-      padding: 0;
-      margin: 5px; }
-      .footer .controles img:active {
-        transform: scale(1.2); }
-  .footer .audio {
-    display: none; } }
+  .footer {
+    background-color: #272a30; }
+    .footer .artista {
+      width: 80%;
+      max-width: 80%; }
+      .footer .artista .informe {
+        padding: 5px 10px; }
+        .footer .artista .informe .cancion {
+          font-size: 14px;
+          line-height: 15px;
+          color: #FFFFFF;
+          margin: 1px 0 5px 0; }
+        .footer .artista .informe .album {
+          font-size: 13px;
+          line-height: 15px; }
+    .footer .controles {
+      width: 50%;
+      max-width: 50%; }
+      .footer .controles img {
+        width: 20%;
+        max-width: 20%;
+        padding: 0;
+        margin: 8px; }
+        .footer .controles img:active {
+          transform: scale(1.2); }
+    .footer .audio {
+      display: none; } }
 .catalogo {
   display: flex;
   flex-direction: column;
@@ -201,23 +203,27 @@
     width: 100%;
     grid-column: 1; }
     .catalogo .busqueda {
+      background-color: #272a30;
       position: fixed;
       height: 60px;
-      background-color: #EA5757;
+      max-height: 80px;
       z-index: 100;
       width: 100%;
       margin: auto;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      justify-items: center; }
+      justify-items: center;
+      border: none; }
       .catalogo .busqueda .buscar {
         width: 90%;
         margin: 10px auto; }
         .catalogo .busqueda .buscar input {
+          background-color: #272a30;
           width: 100%;
-          height: 40px; }
+          height: 50px;
+          max-height: 50px; }
         .catalogo .busqueda .buscar img {
-          bottom: 10px;
+          bottom: 15px;
           right: 10px; }
       .catalogo .busqueda .usuario p {
         display: none; }
@@ -235,10 +241,6 @@
       height: 100%; }
   .banner .descripcion {
     width: 100%;
-    background: linear-gradient(0deg, rgba(224, 128, 128, 0.7), rgba(221, 75, 75, 0.7)), url("../img/caricatura.png");
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: cover;
     padding: 20px; }
     .banner .descripcion h2 {
       font-family: Quicksand;
@@ -281,26 +283,36 @@
 
 @media (max-width: 600px) {
   .banner {
-    width: 94%;
-    margin: 20% auto 0 auto; }
+    background-color: #272a30;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    height: 52vh;
+    padding: 80px 0 0 0; }
     .banner .disco {
-      width: 80%;
-      max-width: 80%; }
-    .banner .descripcion {
+      display: flex;
+      justify-content: center;
       width: 100%;
-      background: linear-gradient(0deg, rgba(224, 128, 128, 0.7), rgba(221, 75, 75, 0.7)), url("../img/caricatura.png");
-      background-position: center right;
-      background-repeat: no-repeat;
-      background-size: cover;
-      padding: 20px; }
+      max-width: 100%;
+      margin: 0 auto; }
+      .banner .disco img {
+        width: 40%;
+        border-radius: 50%; }
+    .banner .descripcion {
+      width: 80%;
+      max-width: 80%;
+      margin: 0 auto; }
       .banner .descripcion h2 {
         font-family: Quicksand;
         font-style: normal;
         font-weight: bold;
         font-size: 15px;
         line-height: 18px;
-        color: #FFFFFF; }
+        color: #FFFFFF;
+        text-align: center; }
       .banner .descripcion p {
+        text-align: center;
         font-family: Quicksand;
         font-style: normal;
         font-weight: normal;
@@ -310,6 +322,7 @@
       .banner .descripcion .button {
         width: 100%;
         max-width: 100%;
+        display: flex;
         top: 1%;
         margin: 0 auto; }
         .banner .descripcion .button .reproduce, .banner .descripcion .button .seguir {

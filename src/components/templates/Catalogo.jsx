@@ -78,7 +78,7 @@ const Catalogo = () =>{
         <Fragment>
             <div className="busqueda">
                 <div className="buscar">
-                    <input type="text" placeholder="Buscar" onChange={(e)=> setNombre(e.target.value)} onKeyUp={buscarCancion} />
+                    <input type="text" placeholder="Buscar" onChange={(e)=> setNombre(e.target.value)} onKeyUp={buscarCancion} autoFocus />
                     <img src={buscar} alt=""/>
                 </div>
                 <div className="usuario">
