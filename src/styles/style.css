@@ -7,15 +7,16 @@
   width: 100%;
   max-width: 100%;
   display: grid;
-  grid-template-columns: 20% 80%; }
+  background-color: #121216;
+  grid-template-columns: 18% 82%; }
   .contenedor .navegacion {
     width: 100%;
     height: 100vh; }
     .contenedor .navegacion .top {
       position: fixed;
       height: 100%;
-      width: 20%;
-      background: #662323;
+      width: 18%;
+      background: #191922;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
       .contenedor .navegacion .top .logo {
         width: 80%;
@@ -61,7 +62,7 @@
   right: 0;
   bottom: 0;
   height: 80px;
-  background: #f05b5b;
+  background: #23232D;
   display: flex;
   justify-content: space-between;
   align-items: center; }
@@ -153,41 +154,47 @@
   flex-direction: column;
   width: 100%; }
   .catalogo .busqueda {
-    width: 94%;
-    margin: 10px auto;
+    width: 100%;
+    margin: 0 auto 25px auto;
+    border: 1px solid #32323D;
     height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center; }
     .catalogo .busqueda .buscar {
       width: 50%;
+      margin: 10px;
       position: relative; }
       .catalogo .busqueda .buscar input {
-        width: 100%;
-        background: #FFFFFF;
-        border: 1px solid #828282;
+        width: 90%;
+        margin: auto;
+        background: #121216;
+        border: none;
         box-sizing: border-box;
         border-radius: 100px;
-        padding: 0 10px;
-        outline: none; }
+        padding: 10px 40px;
+        outline: none;
+        color: #fff; }
         .catalogo .busqueda .buscar input::placeholder {
+          color: #60606A;
           font-family: Quicksand;
           font-style: normal;
           font-weight: normal;
           font-size: 18px;
-          line-height: 22px;
-          color: #BDBDBD; }
+          line-height: 22px; }
       .catalogo .busqueda .buscar img {
         position: absolute;
-        bottom: 4px;
-        right: 10px; }
+        bottom: 25%;
+        right: 10px;
+        left: 2%; }
     .catalogo .busqueda .usuario {
       display: flex;
       align-items: center; }
       .catalogo .busqueda .usuario img {
         margin: auto 10px; }
       .catalogo .busqueda .usuario p {
-        margin: 0; }
+        color: #60606A;
+        margin: 0 10px; }
 
 @media (max-width: 600px) {
   .catalogo {
@@ -344,14 +351,14 @@
         font-weight: bold;
         font-size: 14px;
         line-height: 17px;
-        color: #555555; }
+        color: #FFFFDA; }
       .resultado .musica .inf-musica p {
         font-family: Quicksand;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
-        line-height: 15px;
-        color: #828282; }
+        line-height: 17px;
+        color: #636348; }
 
 @media (max-width: 1100px) {
   .resultado .musica {
