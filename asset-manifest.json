@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/reto-deezer/static/css/main.50eabb31.chunk.css",
+    "main.css": "/reto-deezer/static/css/main.dbf50f33.chunk.css",
     "main.js": "/reto-deezer/static/js/main.1de60297.chunk.js",
     "main.js.map": "/reto-deezer/static/js/main.1de60297.chunk.js.map",
     "runtime-main.js": "/reto-deezer/static/js/runtime-main.7d86e4ce.js",
@@ -16,7 +16,7 @@
     "static/js/5.03530714.chunk.js.map": "/reto-deezer/static/js/5.03530714.chunk.js.map",
     "index.html": "/reto-deezer/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/reto-deezer/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.50eabb31.chunk.css.map": "/reto-deezer/static/css/main.50eabb31.chunk.css.map",
+    "static/css/main.dbf50f33.chunk.css.map": "/reto-deezer/static/css/main.dbf50f33.chunk.css.map",
     "static/js/2.b40fcd2d.chunk.js.LICENSE.txt": "/reto-deezer/static/js/2.b40fcd2d.chunk.js.LICENSE.txt",
     "static/media/adelante.5240dd3d.svg": "/reto-deezer/static/media/adelante.5240dd3d.svg",
     "static/media/atras.5e16fc6b.svg": "/reto-deezer/static/media/atras.5e16fc6b.svg",
@@ -31,7 +31,7 @@
     "static/js/runtime-main.7d86e4ce.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.b40fcd2d.chunk.js",
-    "static/css/main.50eabb31.chunk.css",
+    "static/css/main.dbf50f33.chunk.css",
     "static/js/main.1de60297.chunk.js"
   ]
 }
