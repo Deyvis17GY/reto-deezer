@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import Buscar from '../templates/buscar'
+import Banner from '../templates/banner'
+import Footer from '../templates/footer'
 import LazyLoad from 'react-lazyload'
 import imgCaricatura from '../../img/caricatura.png'
-import buscar from '../../icons/buscar.svg'
-import usuario from '../../icons/usuario.svg'
-import Footer from '../templates/footer'
 import fetchJsonp from 'fetch-jsonp'
 import playImg from '../../icons/playImage.svg'
+// import pausaImg from '../../icons/pausa.svg'
 
 const Catalogo = () =>{
     const [nombre,setNombre] = useState('')
@@ -15,10 +16,11 @@ const Catalogo = () =>{
     const [imgMiniatura,setImgMiniatura]= useState(null)
     const [nomMusica,setNomMusica]=useState('')
     const [nomArtista,setNomArtista]=useState('')
+    const [controlImg,setControlImg]=useState(null)
     
     const inicioImg = document.querySelector('.inicioImg')
     let contador = 1
-
+   
     const getCancion = async (nom)=>{
         const response = await fetchJsonp('https://api.deezer.com/search/track?q='+nom+'&index=0&limit=40&output=jsonp')
         const respuesta = await response.json()
@@ -44,7 +46,7 @@ const Catalogo = () =>{
     }
 
     const obtener = async ()=>{
-        const data = await fetchJsonp('https://api.deezer.com/search/track?q=camilo&index=0&limit=39&output=jsonp')
+        const data = await fetchJsonp('https://api.deezer.com/search/track?q=camilo&index=0&limit=37&output=jsonp')
         const response = await data.json()
         const personas = response.data
         
@@ -55,76 +57,60 @@ const Catalogo = () =>{
             setCancion(item.preview)
             setNomMusica('Por Primera Vez')
             setNomArtista('Camilo')
+            return
         })   
     }
 
-    const reproducir = ()=>{
+    const reproducir= ()=>{
         if(contador===1){
-            contador =0
+            // setControlImg(pausaImg)
             inicioImg.play()
-            
+            contador =0
         }else{
-            contador =1
+            // setControlImg(playImg)
             inicioImg.pause()
+            contador =1            
         }   
     }
-    
 
     useEffect(()=>{
       obtener()
-      
+      setControlImg(playImg)
     },[])
     return(
         <Fragment>
-            <div className="busqueda">
-                <div className="buscar">
-                    <input type="text" placeholder="Buscar" onChange={(e)=> setNombre(e.target.value)} onKeyUp={buscarCancion} autoFocus />
-                    <img src={buscar} alt=""/>
-                </div>
-                <div className="usuario">
-                    <img src={usuario} alt=""/>
-                    <p>Deyvis Mariños</p>
-                </div>
-            </div>
+            <Buscar escribe={(e)=> setNombre(e.target.value)} cancion={buscarCancion} />
 
-            <div className="banner">
-                <div className="disco">
-                    <img src={imgBanner} alt=""/>
-                </div>
-                <div className="descripcion">
-                    <h2>{nomMusica}</h2>
-                    <p>{nomArtista}</p>
-                    <p>Prueba Flow, sólo en Deezer. Escucha tu música,
-                     cuando sea y dónde sea</p>
-                    <div className="button">
-                        <button className="reproduce" onClick={reproducir}>Reproducir</button>
-                        <button className="seguir">Seguir</button>
-                    </div>
-                </div>
-            </div>
+            <Banner banner={imgBanner} musica={nomMusica} artista={nomArtista} reproduce={reproducir}/>
+
 
             <div className="resultado">
             <h1>Resultados</h1>
             <div className="musica">
                     {
-                        artista.map( (item)=>(
-                            <div key={item.id}  className="inf-musica">
-                                <div className="playImage">
+                        artista.map( (item,k)=>(
+                            <div key={k}  className="inf-musica">
+                              <div className="playImage">
                                 <LazyLoad width={"100%"} debounce={false} offset={200}>
                                     <img src={item.album.cover_big} alt=""/>
-
                                     <img className="playImg"  src={playImg} alt="" onClick={(e)=>ObtenerDatosId(item)} />
                                     </LazyLoad>
                                 </div>
                                 <h3  className="titulo">{item.title}</h3>
                                 <p className="subtitulo">{item.artist.name}</p>
                             </div>
+                            
                         ))
                     }                        
                 </div>
             </div>
 
-            <Footer musica={cancion} caricatura={imgMiniatura} nombreCancion={nomMusica} nomArtista={nomArtista} inicioImg="inicioImg" />
+            <Footer  listo={reproducir} musica={cancion}
+             caricatura={imgMiniatura} nombreCancion={nomMusica} 
+             nomArtista={nomArtista} inicioImg="inicioImg"
+             play={controlImg}
+              
+            />
         </Fragment>
     )
 }

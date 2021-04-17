@@ -282,6 +282,9 @@
           background-color: #E86060;
           color: #fff; }
 
+@media (max-width: 1000px) {
+  .banner .disco {
+    width: 50%; } }
 @media (max-width: 600px) {
   .banner {
     background-color: #272a30;
