@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/reto-deezer/static/css/main.17159a58.chunk.css",
+    "main.css": "/reto-deezer/static/css/main.bd78ef01.chunk.css",
     "main.js": "/reto-deezer/static/js/main.1de60297.chunk.js",
     "main.js.map": "/reto-deezer/static/js/main.1de60297.chunk.js.map",
-    "runtime-main.js": "/reto-deezer/static/js/runtime-main.d316023e.js",
-    "runtime-main.js.map": "/reto-deezer/static/js/runtime-main.d316023e.js.map",
+    "runtime-main.js": "/reto-deezer/static/js/runtime-main.76fe816c.js",
+    "runtime-main.js.map": "/reto-deezer/static/js/runtime-main.76fe816c.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/reto-deezer/static/css/2.4c97ca4f.chunk.css",
     "static/js/2.b40fcd2d.chunk.js": "/reto-deezer/static/js/2.b40fcd2d.chunk.js",
     "static/js/2.b40fcd2d.chunk.js.map": "/reto-deezer/static/js/2.b40fcd2d.chunk.js.map",
     "static/js/3.a6b12d5f.chunk.js": "/reto-deezer/static/js/3.a6b12d5f.chunk.js",
     "static/js/3.a6b12d5f.chunk.js.map": "/reto-deezer/static/js/3.a6b12d5f.chunk.js.map",
-    "static/js/4.43ea3c2d.chunk.js": "/reto-deezer/static/js/4.43ea3c2d.chunk.js",
-    "static/js/4.43ea3c2d.chunk.js.map": "/reto-deezer/static/js/4.43ea3c2d.chunk.js.map",
+    "static/js/4.de4ea12e.chunk.js": "/reto-deezer/static/js/4.de4ea12e.chunk.js",
+    "static/js/4.de4ea12e.chunk.js.map": "/reto-deezer/static/js/4.de4ea12e.chunk.js.map",
     "static/js/5.03530714.chunk.js": "/reto-deezer/static/js/5.03530714.chunk.js",
     "static/js/5.03530714.chunk.js.map": "/reto-deezer/static/js/5.03530714.chunk.js.map",
     "index.html": "/reto-deezer/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/reto-deezer/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.17159a58.chunk.css.map": "/reto-deezer/static/css/main.17159a58.chunk.css.map",
+    "static/css/main.bd78ef01.chunk.css.map": "/reto-deezer/static/css/main.bd78ef01.chunk.css.map",
     "static/js/2.b40fcd2d.chunk.js.LICENSE.txt": "/reto-deezer/static/js/2.b40fcd2d.chunk.js.LICENSE.txt",
     "static/media/adelante.5240dd3d.svg": "/reto-deezer/static/media/adelante.5240dd3d.svg",
     "static/media/atras.5e16fc6b.svg": "/reto-deezer/static/media/atras.5e16fc6b.svg",
@@ -27,10 +27,10 @@
     "static/media/usuario.bbce3608.svg": "/reto-deezer/static/media/usuario.bbce3608.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d316023e.js",
+    "static/js/runtime-main.76fe816c.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.b40fcd2d.chunk.js",
-    "static/css/main.17159a58.chunk.css",
+    "static/css/main.bd78ef01.chunk.css",
     "static/js/main.1de60297.chunk.js"
   ]
 }
