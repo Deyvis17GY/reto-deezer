@@ -27,7 +27,9 @@ const Footer = ({musica,caricatura,nombreCancion,nomArtista,inicioImg,listo,auto
           <Fragment>
               <div className="footer">
                   <div className="artista">
-                      <img src={caricatura} alt=""/>
+                      <div className="caratula">
+                         <img src={caricatura} alt=""/>
+                      </div>
                       <div className="informe">
                         <marquee scrollamount="2"><p className="cancion">{nombreCancion}</p></marquee> 
                         <p className="album">{nomArtista}</p>

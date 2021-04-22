@@ -92,7 +92,7 @@ const Catalogo = () =>{
                             <div key={k}  className="inf-musica">
                               <div className="playImage">
                                 <LazyLoad width={"100%"} debounce={false} offset={200}>
-                                    <img src={item.album.cover_big} alt=""/>
+                                    <img className="album" src={item.album.cover_big} alt={item.title} />
                                     <img className="playImg"  src={playImg} alt="" onClick={(e)=>ObtenerDatosId(item)} />
                                     </LazyLoad>
                                 </div>

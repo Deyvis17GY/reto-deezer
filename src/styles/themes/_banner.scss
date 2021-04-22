@@ -1,11 +1,36 @@
 .banner{
     width: 94%;
     height: 250px;
-    margin:auto;
+    min-height: 250px;
+    margin:1% 3%;
     display: flex;
     .disco{
+        position: relative;
+        overflow: hidden;
         width: 30%;
+        height: 100%;
+        // background: linear-gradient(to right,#d9d9d9 0%, rgba(201, 199, 199, 0.938) 20%,#d9d9d9 40%,#d9d9d9 100%);
+        // animation: shimmer 1s linear 15;
+         &::before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right,#656871 0%,#888b94 20%,#656871 40%,#656871 100%);
+            background-size: 450px 400px;
+            background-repeat: no-repeat;
+            animation: shimmer 1s linear 15;
+            }
+            @keyframes shimmer {
+                0%{
+                    background-position: -450px 0;
+                }
+                100%{
+                    background-position: 450px 0;
+                }
+            }
         img{
+            position: absolute;
             width: 100%;
             height: 100%;
             border-radius: 2px;
@@ -82,20 +107,27 @@
         max-height: 500px;
         min-height: 500px;
         padding: 70px 0 0 0;
+        margin: 0;
         .disco{
             display: flex;
             justify-content: center;
-            width: 100%;
-            max-width: 100%;
+            width: 40%;  
+            max-width: 40%;
+                
+            // min-width: 200px;
+            // max-width: 200px;
+            // min-height: 200px;
+            // max-height: 200px;
             margin:0 auto;
+            border-radius: 50%;
             img{
-                width: 40%;
-                border-radius: 50%;
+                width: 100%;
             }
         }
         .descripcion{
             width: 80%;
             max-width: 80%;
+            min-height: 210px;
             margin:0 auto;
             h2{
                 font-family: Quicksand;
@@ -106,7 +138,7 @@
                 color: #FFFFFF;
                 text-align: center;
                 height: 40px;
-                max-height: 40px;
+                min-height: 30px;
             }
             p{
                 text-align: center;
@@ -115,7 +147,8 @@
                 font-weight: normal;
                 font-size: 14px;
                 line-height: 15px;
-                color: #FFFFFF
+                color: #FFFFFF;
+                min-height: 20px;
             }
             .button{
                 width: 100%;

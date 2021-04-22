@@ -20,17 +20,41 @@
             width: 100%;
             .playImage{
                 position: relative;
+                min-height: 180px;
+                overflow: hidden;
+                border-radius: 4px;
+                // background: linear-gradient(to right,#d9d9d9 0%, rgba(0,0,0,0.05) 20%,#d9d9d9 40%,#d9d9d9 100%);
+                // animation: shimmer 1s linear 10;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background: linear-gradient(to right,#656871 0%,#888b94 20%,#656871 40%,#656871 100%);
+                    background-size: 450px 400px;
+                    background-repeat: no-repeat;
+                    animation: shimmer 1s linear 15;
+                }
+                @keyframes shimmer {
+                    0%{
+                        background-position: -450px 0;
+                    }
+                    100%{
+                        background-position: 450px 0;
+                    }
+                }
                 img{
                     width: 100%;
-                    border-radius: 4px;
-                    height: 180px;
+                    height:100%;
+                    min-height: 180px;
                 }
                 .playImg{
                     position: absolute;
                     left: 0;
-                    width: 160px;
-                    padding: 0 65px;
+                    width: 100%;
+                    padding: 0 75px;
                     opacity: 0.7;
+                    min-height: 180px;
                     &:active{
                         transform: scale(1.1);
                     }
