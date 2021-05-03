@@ -23,11 +23,12 @@ const Catalogo = () =>{
     const inicioImg = document.querySelector('.inicioImg')
     const suggBox =document.querySelector('.pintarClaves')
     const searchWrapper = document.querySelector('.buscar')
+    const valorBuscar = document.querySelector('.valorBuscar')
     let contador = 1
     let buscadorArtista = []
    
     const getCancion = async (nom)=>{
-        const response = await fetchJsonp('https://api.deezer.com/search?q='+nom+'&index=0&limit=10&output=jsonp')
+        const response = await fetchJsonp('https://api.deezer.com/search/track?q='+nom+'&index=0&limit=10&output=jsonp')
         const respuesta = await response.json()
         const datos = respuesta.data
         // setArtista(datos) 
@@ -51,7 +52,6 @@ const Catalogo = () =>{
         
         if(nombre==='' || !nombre.trim() || nombre.length < 0){
             getCancion('camilo')
-            
         }else{
           
             getCancion(nombre)
@@ -61,7 +61,7 @@ const Catalogo = () =>{
 
     const ObtenerPalabra = (clave)=>{
         let array=[]
-        if(clave){
+        if(nombre){
             array = clave.filter((data)=>{
             return data.toLocaleLowerCase()
             });
@@ -72,21 +72,23 @@ const Catalogo = () =>{
             // console.log(emptyArray)
             searchWrapper.classList.add('active');
             // showDevs(setEmptyArray)
-            let allList = suggBox.querySelectorAll('li');
-            for(let i =0;i<allList.length;i++){
-                allList[i].setAttribute('onclick',{select});
-            }
+            // let allList = suggBox.querySelectorAll('li');
+            // for(let i =0;i<allList.length;i++){
+            //     allList[i].setAttribute('onclick',{select});
+            // }
         }else{
+            // searchWrapper.style.setProperty("display", "none");
             searchWrapper.classList.remove('active');
         }
     }
 
     const select = async (item)=> {
         // setArtista(item)
-        const response = await fetchJsonp('https://api.deezer.com/search?q='+item+'&index=0&limit=10&output=jsonp')
+        const response = await fetchJsonp('https://api.deezer.com/search/track?q='+item+'&index=0&limit=10&output=jsonp')
         const respuesta = await response.json()
         const datos = respuesta.data
         setArtista(datos) 
+        valorBuscar.value = item
 
         searchWrapper.classList.remove('active');
     }
@@ -107,7 +109,7 @@ const Catalogo = () =>{
 
    
     const obtener = async ()=>{
-        const data = await fetchJsonp('https://api.deezer.com/search?q=camilo&index=0&limit=37&output=jsonp')
+        const data = await fetchJsonp('https://api.deezer.com/search/track?q=camilo&index=0&limit=37&output=jsonp')
         const response = await data.json()
         const personas = response.data
         
@@ -147,7 +149,8 @@ const Catalogo = () =>{
             <Buscar user={emptyArray.map((item,k) =>{
                return  <li key={k} onClick={(e)=>select(item)}>{item}</li>
             })}
-             search_input="buscar" pintarBuscar="pintarClaves" escribe={(e)=> setNombre(e.target.value)} cancion={buscarCancion} />
+             search_input="buscar" pintarBuscar="pintarClaves" valorBuscar="valorBuscar"
+             escribe={(e)=> setNombre(e.target.value)} cancion={buscarCancion} />
           
             <Banner banner={imgBanner} musica={nomMusica} artista={nomArtista} reproduce={reproducir}/>
 

@@ -206,7 +206,7 @@
         max-height: 280px;
         overflow-y: auto;
         opacity: 0;
-        pointer-events: auto; }
+        pointer-events: none; }
         .catalogo .busqueda .buscar .autocom-box::-webkit-scrollbar {
           width: 8px;
           /* Tamaño del scroll en vertical */
@@ -219,7 +219,7 @@
           width: 100%;
           cursor: default;
           border-radius: 3px;
-          display: block;
+          display: none;
           color: #fff; }
           .catalogo .busqueda .buscar .autocom-box li:hover {
             background-color: #42424C; }

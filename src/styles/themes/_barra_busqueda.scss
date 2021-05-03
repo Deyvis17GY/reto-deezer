@@ -34,7 +34,7 @@
                 max-height: 280px;
                 overflow-y: auto;
                 opacity: 0;
-                pointer-events: auto;
+                pointer-events: none;
                 &::-webkit-scrollbar {
                     width: 8px;     /* Tamaño del scroll en vertical */
                     height: 8px;    /* Tamaño del scroll en horizontal */
@@ -46,7 +46,7 @@
                     width: 100%;
                     cursor: default;
                     border-radius: 3px;
-                    display: block;
+                    display: none;
                     color:#fff;
                     &:hover{
                         background-color:#42424C;

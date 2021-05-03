@@ -8,7 +8,7 @@ const Buscar = (props) =>{
           <Fragment>
                <div className="busqueda">
                 <div className={`buscar ${props.search_input}`}>
-                    <input type="search" placeholder="Buscar"
+                    <input type="search" placeholder="Buscar" className={`valor ${props.valorBuscar}`}
                      onChange={props.escribe} onKeyUp={props.cancion} autoFocus />
                     <img src={buscar} alt=""/>
                         <div className={`autocom-box ${props.pintarBuscar}`}>
