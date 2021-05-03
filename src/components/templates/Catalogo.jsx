@@ -18,7 +18,6 @@ const Catalogo = () =>{
     const [nomMusica,setNomMusica]=useState('')
     const [nomArtista,setNomArtista]=useState('')
     const [controlImg,setControlImg]=useState(null)
-    const [buscarOs,setBuscarOs] = useState([])
     let [emptyArray,setEmptyArray] = useState([])
     
     const inicioImg = document.querySelector('.inicioImg')
@@ -70,7 +69,7 @@ const Catalogo = () =>{
                 return data = data;
             })
             setEmptyArray(array)
-            console.log(emptyArray)
+            // console.log(emptyArray)
             searchWrapper.classList.add('active');
             // showDevs(setEmptyArray)
             let allList = suggBox.querySelectorAll('li');
@@ -88,22 +87,22 @@ const Catalogo = () =>{
         const respuesta = await response.json()
         const datos = respuesta.data
         setArtista(datos) 
-        console.log(datos)
+
         searchWrapper.classList.remove('active');
     }
 
-    function showDevs (list){
-        let listData;
-        let userValue='';
-        if(!list.length){
-            userValue = nombre;
-            listData = '<li>'+userValue+'</li>'
-        }else{
-            listData = list.join('');
-        }
+    // function showDevs (list){
+    //     let listData;
+    //     let userValue='';
+    //     if(!list.length){
+    //         userValue = nombre;
+    //         listData = '<li>'+userValue+'</li>'
+    //     }else{
+    //         listData = list.join('');
+    //     }
     
-        suggBox.innerHTML = listData;
-    }
+    //     suggBox.innerHTML = listData;
+    // }
 
 
    
@@ -145,8 +144,8 @@ const Catalogo = () =>{
            
 
                
-            <Buscar user={emptyArray.map(item =>{
-               return  <li onClick={(e)=>select(item)}>{item}</li>
+            <Buscar user={emptyArray.map((item,k) =>{
+               return  <li key={k} onClick={(e)=>select(item)}>{item}</li>
             })}
              search_input="buscar" pintarBuscar="pintarClaves" escribe={(e)=> setNombre(e.target.value)} cancion={buscarCancion} />
           
