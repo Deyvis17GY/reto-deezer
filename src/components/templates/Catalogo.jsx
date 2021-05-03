@@ -12,20 +12,31 @@ const Catalogo = () =>{
     const [nombre,setNombre] = useState('')
     const [cancion,setCancion] = useState([])
     const [artista,setArtista] = useState([])
+    const [buscador,setBuscador]=useState([])
     const [imgBanner,setImgBanner]=useState(null)
     const [imgMiniatura,setImgMiniatura]= useState(null)
     const [nomMusica,setNomMusica]=useState('')
     const [nomArtista,setNomArtista]=useState('')
     const [controlImg,setControlImg]=useState(null)
+    const [buscarOs,setBuscarOs] = useState([])
+    let [emptyArray,setEmptyArray] = useState([])
     
     const inicioImg = document.querySelector('.inicioImg')
+    const suggBox =document.querySelector('.pintarClaves')
+    const searchWrapper = document.querySelector('.buscar')
     let contador = 1
+    let buscadorArtista = []
    
     const getCancion = async (nom)=>{
-        const response = await fetchJsonp('https://api.deezer.com/search/track?q='+nom+'&index=0&limit=40&output=jsonp')
+        const response = await fetchJsonp('https://api.deezer.com/search?q='+nom+'&index=0&limit=10&output=jsonp')
         const respuesta = await response.json()
         const datos = respuesta.data
-        setArtista(datos)   
+        // setArtista(datos) 
+        setBuscador(datos)
+       
+        
+        buscadorArtista = buscador.map(item => item.title)
+        ObtenerPalabra(buscadorArtista)
     }
 
     const ObtenerDatosId = (id)=>{ 
@@ -38,15 +49,66 @@ const Catalogo = () =>{
     }
 
     const buscarCancion = async()=>{
+        
         if(nombre==='' || !nombre.trim() || nombre.length < 0){
             getCancion('camilo')
+            
         }else{
+          
             getCancion(nombre)
+            
         }
     }
 
+    const ObtenerPalabra = (clave)=>{
+        let array=[]
+        if(clave){
+            array = clave.filter((data)=>{
+            return data.toLocaleLowerCase()
+            });
+            array = array.map((data)=>{
+                return data = data;
+            })
+            setEmptyArray(array)
+            console.log(emptyArray)
+            searchWrapper.classList.add('active');
+            // showDevs(setEmptyArray)
+            let allList = suggBox.querySelectorAll('li');
+            for(let i =0;i<allList.length;i++){
+                allList[i].setAttribute('onclick',{select});
+            }
+        }else{
+            searchWrapper.classList.remove('active');
+        }
+    }
+
+    const select = async (item)=> {
+        // setArtista(item)
+        const response = await fetchJsonp('https://api.deezer.com/search?q='+item+'&index=0&limit=10&output=jsonp')
+        const respuesta = await response.json()
+        const datos = respuesta.data
+        setArtista(datos) 
+        console.log(datos)
+        searchWrapper.classList.remove('active');
+    }
+
+    function showDevs (list){
+        let listData;
+        let userValue='';
+        if(!list.length){
+            userValue = nombre;
+            listData = '<li>'+userValue+'</li>'
+        }else{
+            listData = list.join('');
+        }
+    
+        suggBox.innerHTML = listData;
+    }
+
+
+   
     const obtener = async ()=>{
-        const data = await fetchJsonp('https://api.deezer.com/search/track?q=camilo&index=0&limit=37&output=jsonp')
+        const data = await fetchJsonp('https://api.deezer.com/search?q=camilo&index=0&limit=37&output=jsonp')
         const response = await data.json()
         const personas = response.data
         
@@ -76,11 +138,18 @@ const Catalogo = () =>{
     useEffect(()=>{
       obtener()
       setControlImg(playImg)
+      
     },[])
     return(
         <Fragment>
-            <Buscar escribe={(e)=> setNombre(e.target.value)} cancion={buscarCancion} />
+           
 
+               
+            <Buscar user={emptyArray.map(item =>{
+               return  <li onClick={(e)=>select(item)}>{item}</li>
+            })}
+             search_input="buscar" pintarBuscar="pintarClaves" escribe={(e)=> setNombre(e.target.value)} cancion={buscarCancion} />
+          
             <Banner banner={imgBanner} musica={nomMusica} artista={nomArtista} reproduce={reproducir}/>
 
 
