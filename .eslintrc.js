@@ -1,5 +1,5 @@
 module.exports = {
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
 
   // añade "prettier" (y si quieres "prettier/react") a las opciones de "extends
 
