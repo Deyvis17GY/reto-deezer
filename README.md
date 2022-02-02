@@ -1,10 +1,10 @@
 # Reto Deezer
 
 Web application created to apply as a Frontend developer
-# Screenshots
+## Screenshots
 ![preview](./docs/img/preview.png)
 
-# Tools
+## Tools
 - [React](https://reactjs.org/) - Framework
 - [Sass](https://sass-lang.com/) - CSS preprocessor
 - [Github Pages](https://pages.github.com/) - Hosting and deployment
@@ -13,7 +13,7 @@ Web application created to apply as a Frontend developer
 # Deployment
 - The application is deployed in [GitHub Pages](https://pages.github.com/) in this [link](https://deyvis17gy.github.io/reto-deezer/)
 
-# Ejecutar de manera local
+## Run Locally
 1. Clone this repository [reto-deezer](https://github.com/Deyvis17GY/reto-deezer.git)
 2. In the project directory, you can run: 
 ### `yarn install`
